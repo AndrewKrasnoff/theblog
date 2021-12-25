@@ -1,0 +1,19 @@
+
+<%= form_with(model: @post) do |form| %>
+  <div class="mb-3" >
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control form-control-sm" %>
+  </div>
+  <div class="mb-3" >
+    <%= form.label :summary, class: "form-label" %>
+    <%= form.text_area :summary, class: "form-control form-control-sm"  %>
+  </div>
+  <div class="mb-3" >
+    <%= form.label :body, class: "form-label" %>
+    <%= form.text_area :body, class: "form-control form-control-sm rows=20"  %>
+  </div>
+  <div>
+    <%= form.submit 'Save', class: "btn btn-primary btn-sm" %>
+  </div>
+
+<% end %>

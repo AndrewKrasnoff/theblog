@@ -6,6 +6,8 @@
   </small>
 </time>
 <br><br>
+<%= image_tag(@post.image_url(:preview), class: 'img img-fluid img-thumbnail mx-auto d-block') if @post.image? %>
+
 <p><%= @post.body %></p>
 <br><br>
 <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary btn-sm" %>

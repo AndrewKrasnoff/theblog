@@ -1,17 +1,18 @@
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title"><%= link_to post.title, post_path(post) %></h5>
-    <h6 class="card-subtitle mb-2 text-muted">
-      <time>
-        <small class="text-secondary">
-          <%= post.created_at.to_date.strftime("%d %B, %Y") %>  
-        </small>
-      </time>
-    </h6>
-    <p class="card-text">
+    <div class="card-title">
+      <h5><%= link_to post.title, post_path(post) %></h5>
+      <small class="text-secondary">
+        <b><%= post.created_at.to_date.strftime("%d %B, %Y") %></b>
+      </small>
+    </div>  
+    <div class="card-text">
       <%= image_tag(post.image_url(:thumb), class: 'img img-thumbnail rounded float-start', style: 'margin-right: 5px') if post.image? %>
       <%= post.summary %>
-    </p>
+    </div>
+  </div>
+  <div class="card-footer">
+    <%= raw post.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: "badge bg-warning text-dark"}.join(" ") %> 
   </div>
 </div>
 <br>

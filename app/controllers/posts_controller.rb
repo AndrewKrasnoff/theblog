@@ -18,7 +18,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post, success: 'Article was created successfuly'
     else
-      render :new, danger: 'Article was not created'
+      flash.now[:danger] = 'Article was not created'
+      render :new
     end
   end
 
@@ -29,7 +30,8 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to @post, success: 'Article was updated successfuly'
     else
-      render :edit, danger: 'Article was not updated'  
+      flash.now[:danger] = 'Article was not updated'  
+      render :edit
     end  
   end
 

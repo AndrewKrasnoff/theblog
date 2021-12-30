@@ -1,22 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary bg-gradient bg-opacity-75">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><b>TheBlog</b></a>
+    <div class="navbar-brand" style="color: #FFF; border: #FFF solid 2px; padding: 3px; border-radius: 4px"><b><sup>The</sup>Blog</b></div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link <%= 'active' if current_page?(root_path) %>" href="<%= root_path %>">Articles</a>
+          <%= link_to 'Articles', root_path, class: "nav-link" + (" active" if current_page?(root_path)).to_s %>
         </li>
         <li class="nav-item">
-          <a class="nav-link <%= 'active' if current_page?(new_post_path) %>" href="<%= new_post_path %>">New Article</a>
+          <%= link_to 'New Article', new_post_path, class: "nav-link" + (" active" if current_page?(new_post_path)).to_s %>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>

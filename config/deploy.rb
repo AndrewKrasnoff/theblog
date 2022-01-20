@@ -11,4 +11,4 @@ set :keep_releases, 2
 append :linked_files, 'config/database.yml', 'config/secrets.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
 
-set :deploy_to, '/home/deploy/www/theblog'
+set :deploy_to, "/home/deploy/www/#{fetch :application}"

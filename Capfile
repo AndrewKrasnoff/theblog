@@ -20,8 +20,8 @@ require 'capistrano/passenger'
 require 'capistrano/rbenv'
 require 'capistrano/bundler'
 
-set :rbenv_type, :user
-set :rbenv_ruby, '2.7.5'
+# set :rbenv_type, :user
+# set :rbenv_ruby, '2.7.5'
 #
 # require "capistrano/rvm"
 # require "capistrano/rbenv"

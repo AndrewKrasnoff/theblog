@@ -1,13 +1,13 @@
-class PostsController < ApplicationController
+# frozen_string_literal: true
 
+class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @posts = Post.all
   end
 
-  def show
-  end  
+  def show; end
 
   def new
     @post = Post.new
@@ -23,23 +23,21 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @post.update(post_params)
       redirect_to @post, success: 'Article was updated successfuly'
     else
-      flash.now[:danger] = 'Article was not updated'  
+      flash.now[:danger] = 'Article was not updated'
       render :edit
-    end  
+    end
   end
 
   def destroy
     @post.destroy
     redirect_to posts_path, success: 'Article was deleted successfuly'
   end
-
 
   private
 
@@ -49,6 +47,5 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :summary, :body, :image, :all_tags)
-  end  
-
+  end
 end

@@ -1,0 +1,28 @@
+<% provide(:title, "Categories") %>
+<h3>Categories</h3>
+
+<%= link_to 'New Category', new_category_path, class: 'btn btn-primary btn-sm' %>
+
+<section id='categories'>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Category</th>
+        <th>Parent</th>
+        <th></th>
+      </tr>  
+    </thead>  
+    <tbody>
+      <% @categories.each_with_index do |category, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= category.name %></td>
+          <td><%= category.parent.name if category.parent.present? %></td>
+          <td>
+            <%= link_to 'Edit', edit_category_path(category), class: 'btn btn-primary btn-sm' %>
+          </td>
+      <% end %>
+    </tbody>
+  </table>
+</section>

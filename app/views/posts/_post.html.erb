@@ -12,6 +12,9 @@
     </div>
   </div>
   <div class="card-footer">
+    <% if post.category.present? %>
+      <%= link_to post.category.name, post.category, class: "badge bg-info text-dark"%>
+    <% end %>
     <%= raw post.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: "badge bg-warning text-dark"}.join(" ") %> 
   </div>
 </div>

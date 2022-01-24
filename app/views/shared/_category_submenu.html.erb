@@ -1,0 +1,6 @@
+<div style='margin-left: 15px'>
+  <% categories.each do |category| %>
+    <%= link_to category.name, category, class: "nav-link #{'active' if (current_page? (category_path(category))) || (@post.present? && @post.category_id == category.id)}" %> 
+    <%= render 'shared/category_submenu', categories: category.children if category.children.present? %>
+  <% end %>
+</div>

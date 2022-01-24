@@ -1,0 +1,7 @@
+<h4>Categories</h4>
+<nav class="nav nav-pills flex-column">
+  <% Category.roots.each do |category| %>
+    <%= link_to category.name, category, class: "nav-link #{'active' if current_page? (category_path(category))}" %>
+    <%= render "shared/category_submenu", categories: category.root.children %>
+  <% end %>
+</nav>

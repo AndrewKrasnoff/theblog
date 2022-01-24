@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.5'
 
+gem 'ancestry'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'carrierwave', '~> 2.0' # images
 gem 'fog-aws' # s3 cloud
@@ -21,7 +22,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'capistrano', "~> 3.16", require: false
+  gem "capistrano", "~> 3.16", require: false
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'spring'

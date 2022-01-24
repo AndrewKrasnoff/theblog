@@ -18,10 +18,11 @@
     <% symbol = 'exclamation-triangle-fill' %>
   <% end %>
 
-  <div class="alert alert-<%= key %> d-flex align-items-center" style="margin-top: 10px" role="alert">
+  <div class="alert alert-<%= key %> d-flex alert-dismissible fade show" style="margin-top: 10px" role="alert">
     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="<%= key %>:"><use xlink:href="#<%= symbol %>"/></svg>
     <div>
       <%= message %>
     </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" align=right></button>
   </div>
 <% end %>

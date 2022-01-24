@@ -14,12 +14,12 @@
 
   <body>
     <div class="container">
-      <%= render 'posts/header' %>
+      <%= render 'shared/header' %>
     </div>
     <div class="container">
       <div class="row"> 
         <div class="col-12">
-          <%= render 'posts/flash' %>
+          <%= render 'shared/flash' %>
         </div>
       </div>
       <div class="row">
@@ -27,10 +27,8 @@
           <%= yield %>
         </div>  
         <div class="col-3">
-          <h4>Tags' Cloud</h4>
-          <% tag_cloud(Tag.counts, %w{tag1 tag2 tag3 tag4 tag5}) do |tag, css_class| %>
-            <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-          <% end %>
+          <%= render 'shared/category_menu' %>
+          <%= render 'shared/tagcloud' %>
         </div>
       </div>  
     </div> 

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_28_100821) do
+ActiveRecord::Schema.define(version: 2022_01_24_101542) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -19,6 +27,8 @@ ActiveRecord::Schema.define(version: 2021_12_28_100821) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_posts_on_category_id"
   end
 
   create_table "taggings", force: :cascade do |t|

@@ -8,6 +8,7 @@ ruby '2.7.5'
 gem 'ancestry'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'carrierwave', '~> 2.0' # images
+gem 'devise', '~> 4.2'
 gem 'fog-aws' # s3 cloud
 gem 'jbuilder', '~> 2.7'
 gem 'mini_magick' # images

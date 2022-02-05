@@ -12,10 +12,13 @@
 
 
 <% flash.each do |key, message| %>
-  <% if key == 'success' %>
+  <% if key == 'success' || key == 'notice'%>
     <% symbol = 'check-circle-fill' %>
-  <% elsif  key == 'danger' %>  
+    <% key = 'success' %>
+
+  <% elsif  key == 'danger' || key == 'alert'%>  
     <% symbol = 'exclamation-triangle-fill' %>
+    <% key = 'danger' %>
   <% end %>
 
   <div class="alert alert-<%= key %> d-flex alert-dismissible fade show" style="margin-top: 10px" role="alert">

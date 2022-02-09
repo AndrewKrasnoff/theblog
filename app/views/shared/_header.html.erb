@@ -16,11 +16,11 @@
       
       <ul class="navbar-nav justify-content-end">
         <% if user_signed_in? %>
-          <div class="dropdown">
-            <a class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <div class="btn-group">
+            <button class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
               Account
-            </a>
-            <ul class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end"  aria-labelledby="dropdownMenuLink">
               <li class="dropdown-item">
                 <%= link_to 'My account', edit_user_registration_path, class: "dropdown-item" %>
               </li>

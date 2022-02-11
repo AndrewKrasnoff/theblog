@@ -12,6 +12,7 @@ gem 'devise', '~> 4.2'
 gem 'fog-aws' # s3 cloud
 gem 'jbuilder', '~> 2.7'
 gem 'mini_magick' # images
+gem 'pagy', '~> 5.10'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 gem 'sass-rails', '>= 6'

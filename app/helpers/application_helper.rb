@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  include Pagy::Frontend
   def tag_cloud(tags, classes)
     max = tags.max_by(&:count)
     tags.each do |tag|

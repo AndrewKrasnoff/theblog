@@ -19,6 +19,10 @@
   <% elsif  key == 'danger' || key == 'alert'%>  
     <% symbol = 'exclamation-triangle-fill' %>
     <% key = 'danger' %>
+
+  <% elsif  key == 'info' || key == 'info'%>  
+    <% symbol = 'info-fill' %>
+    <% key = 'info' %>
   <% end %>
 
   <div class="alert alert-<%= key %> d-flex alert-dismissible fade show" style="margin-top: 10px" role="alert">

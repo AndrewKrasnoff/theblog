@@ -7,9 +7,7 @@
   </small>
 </div>  
 <div>
-  <% if @post.category.present? %>
-    <%= link_to @post.category.name, @post.category, class: "badge bg-info text-dark"%>
-  <% end %>
+  <%= link_to @post.category.name, @post.category, class: "badge bg-info text-dark" if @post.category.present? %>
   <%= raw @post.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: "badge bg-warning text-dark"}.join(" ") %> 
 </div>
 

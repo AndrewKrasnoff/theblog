@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @posts = Post.where(category_id: [@category.subtree_ids])
+    @pagy, @posts = pagy(Post.where(category_id: [@category.subtree_ids]))
   end
 
   def new

@@ -3,7 +3,8 @@
 class TagsController < ApplicationController
   def show
     @tag = Tag.find_by(name: params[:id])
-    @posts = @tag.posts
+    @pagy, @posts = pagy(Tag.find_by(name: params[:id]).posts)
+    # @posts = @tag.posts
     # render formats: :html
   end
 end

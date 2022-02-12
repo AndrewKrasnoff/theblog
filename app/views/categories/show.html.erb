@@ -1,4 +1,10 @@
 <% provide(:title, 'Category ' + @category.name) %>
-<h3>Category <%= @category.name %></h3>
 
-<%= render @posts %>
+
+<% if @posts.count > 0 %>
+  <h3><%= "#{@category.name}" %></h3>
+  <%= render @posts %>
+<% else %>
+  <% flash.now[:info] = "There are no Articles in #{@category.name}" %>
+<% end %>
+<%== pagy_bootstrap_nav(@pagy) if @posts.count > 1%>
